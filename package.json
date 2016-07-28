@@ -1,6 +1,6 @@
 {
   "name": "fifo-stream",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Streams which doesn't locks fs threads when works with POSIX named pipes (FIFO).",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,10 @@
     "posix"
   ],
   "author": "Phillip Kovalev <twilightfeel@gmail.com> (https://github.com/kaero)",
+  "maintainers": [
+    "Phillip Kovalev <twilightfeel@gmail.com> (https://github.com/kaero)",
+    "Vladimir Varankin <nek.narqo@gmail.com> (https://github.com/narqo)"
+  ],
   "licenses": [
     {
       "type": "MIT",
