@@ -29,7 +29,7 @@ util.inherits(WriteStream, Writable);
 function isFIFOWritable(path) {
     try {
         var fd = fs.openSync(path, O_WRONLY | O_NONBLOCK, S_IFIFO);
-        fs.close(fd);
+        fs.closeSync(fd);
     } catch(e) {
         return false;
     }
