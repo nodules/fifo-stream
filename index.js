@@ -2,17 +2,9 @@ var util = require('util'),
     fs = require('fs'),
     stream = require('stream'),
     Writable = stream.Writable,
-    constants = process.binding('constants');
+    constants = fs.constants;
 
-if (constants.fs) {
-    // nodejs-6 divide constants into logical groups,
-    // we're interested in `fs` constants only
-    constants = constants.fs;
-}
-
-// pray for kernels gods to work, if node version <0.10.29,
-// which does not includes the commit http://git.io/mW15lA
-var O_NONBLOCK = constants.O_NONBLOCK || 04000,
+var O_NONBLOCK = constants.O_NONBLOCK ,
     S_IFIFO = constants.S_IFIFO,
     O_WRONLY = constants.O_WRONLY;
 
@@ -37,7 +29,7 @@ util.inherits(WriteStream, Writable);
 function isFIFOWritable(path) {
     try {
         var fd = fs.openSync(path, O_WRONLY | O_NONBLOCK, S_IFIFO);
-        fs.close(fd);
+        fs.closeSync(fd);
     } catch(e) {
         return false;
     }

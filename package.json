@@ -21,5 +21,8 @@
       "type": "MIT",
       "url": "http://github.com/nodules/fifo-stream/raw/master/LICENSE"
     }
-  ]
+  ],
+  "engine": {
+    "node": ">=6.3"
+  }
 }
